@@ -1,0 +1,46 @@
+﻿@model IEnumerable<MvcSchoolPracticepro1.Models.Submodel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.subid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.subname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.subdesc)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.subid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.subname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.subdesc)
+        </td>
+        <td>
+            @Html.ActionLink("Create ", "Create") |
+            @Html.ActionLink("Update", "Edit", new { id = item.subid }) |
+            @Html.ActionLink("Read", "Details", new { id = item.subid }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.subid })
+        </td>
+    </tr>
+}
+
+</table>

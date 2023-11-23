@@ -1,0 +1,52 @@
+﻿@model IEnumerable<MvcSchoolPracticepro1.Models.Clsmodel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.clsid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Section)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TeacherName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Totalstudents)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.clsid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Section)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TeacherName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Totalstudents)
+        </td>
+        <td>
+            @Html.ActionLink("Create New", "Create") |
+            @Html.ActionLink("Update", "Edit", new { id = item.clsid }) |
+            @Html.ActionLink("Read", "Details", new { id = item.clsid }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.clsid })
+        </td>
+    </tr>
+}
+
+</table>
